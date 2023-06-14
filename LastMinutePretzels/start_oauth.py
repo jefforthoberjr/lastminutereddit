@@ -35,10 +35,21 @@ headers = {**headers, **{'Authorization': f"bearer {TOKEN}"}}
 requests.get('https://oauth.reddit.com/api/v1/me', headers=headers)
 
 print("DEBUG STARTING API CALL: ", file=sys.stderr)
-# res = requests.get("https://oauth.reddit.com/r/python/hot", headers=headers)
-res = requests.get("https://oauth.reddit.com/r/tippytaps/hot", headers=headers)
+# res = requests.get("https://oauth.reddit.com/r/tippytaps/hot", headers=headers)
+res = requests.get("https://oauth.reddit.com/user/pretzels1337/saved", headers=headers)
+        # note: it seems you can only get saved for your own user 
+
 print(json.dumps(res.json()))  # let's see what we get
-# print(res.json())  # let's see what we get
 print("DEBUG FINISHED API CALL: ", file=sys.stderr)
+
+#TODO PARSE OUT ALL THUMBNAILS
+
+#STARTING WITH A COMMANDLINE EXAMPLE
+# data > children [] { data > "thumbnail"
+# parse on the commandline with jq 
+# cat savedoutput.json | jq -r '.data.children[].data.thumbnail' | xargs -I foo curl --output-dir bar foo 
+# download image
+# curl 'https://b.thumbs.redditmedia.com/54hHDYVQ5-PpFmVz4jqaJgIx89tQyPiSVeIC0r3he-A.jpg' -out bar.jpg
+
 
 
