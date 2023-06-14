@@ -1,0 +1,23 @@
+Signed into my reddit account:
+pretzels1337
+
+Name of my "app"
+LastMinutePretzels
+
+"script" type
+
+export REDDIT_CLIENT_ID='cXw0sFzR8g5LdmCIgDatBA'
+export REDDIT_SECRET_TOKEN=''
+export REDDIT_USERNAME=''
+export REDDIT_PASSWORD=''
+
+python3 start_oauth.py
+
+//Install libs
+
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3 get-pip.py
+
+//only pip3 was added as a command alias
+
+pip3 install requests
